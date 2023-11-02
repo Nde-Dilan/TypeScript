@@ -81,6 +81,7 @@ person.age=45;
 
 console.log(person);
 
+
 const greetGuitarist = (guitarist: Guitarist) => {
   return `Hello ${guitarist.name}`
 }

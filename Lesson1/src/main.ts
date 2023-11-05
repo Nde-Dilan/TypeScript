@@ -65,26 +65,27 @@ let jp: Guitarist = {
 console.log(typeof 5);
 
 //Interface vs type : with interface you don't need the equal sign and it's not the case for type
-interface Person  {
-  name:string,
-  age:number,
-  favoriteAnime?:string,
-  isBoy?:boolean
+
+
+interface Person {
+  name: string;
+  age: number;
+  favoriteAnime?: string;
+  isBoy?: boolean;
 }
 
-let person:Person = {
-  name:"hello",
-  age:15,
-}
+let person: Person = {
+  name: "hello",
+  age: 15,
+};
 
-person.age=45;
+person.age = 45;
 
 console.log(person);
 
-
 const greetGuitarist = (guitarist: Guitarist) => {
-  return `Hello ${guitarist.name}`
-}
+  return `Hello ${guitarist.name}`;
+};
 
 console.log(greetGuitarist(jp));
 
@@ -100,4 +101,55 @@ enum Grade {
 }
 
 console.log(Grade.U);
+
+//Type Aliases are just working when using type not interface
+
+type stringOrNumber = string | number;
+
+type boolOrString = boolean | string;
+
+type Pianist = {
+  name: stringOrNumber;
+  active: boolOrString;
+  tel: number;
+};
+
+type PostId1 = stringOrNumber;
+
+//Litteral types
+
+let myName: "Dilan" | "Yann";
+myName = "Dilan";
+
+console.log(myName);
+
+const sum = (a: number, b: number) => {
+  return a + b;
+};
+
+const logMsg = (message: any): void => {
+  console.log(message);
+};
+
+logMsg("Hello");
+logMsg(sum(1, 8));
+
+// type mathFunction = (a:number, b:number) => number;
+
+interface mathFunction {
+  (a: number, b: number): number;
+}
+
+const multiply: mathFunction = function (c, d) {
+  return c - d;
+};
+
+//optional parameters
+
+const addAll = (a: number, b: number, c?: number): number => {
+  if(typeof c !== 'undefined') return a + b + c;
+  return a+b;
+};
+
+//1:31:12
 

@@ -68,3 +68,25 @@ var Grade;
     Grade[Grade["A"] = 4] = "A";
 })(Grade || (Grade = {}));
 console.log(Grade.U);
+//Litteral types
+let myName;
+myName = "Dilan";
+console.log(myName);
+const sum = (a, b) => {
+    return a + b;
+};
+const logMsg = (message) => {
+    console.log(message);
+};
+logMsg("Hello");
+logMsg(sum(1, 8));
+const multiply = function (c, d) {
+    return c - d;
+};
+//optional parameters
+const addAll = (a, b, c) => {
+    if (typeof c !== 'undefined')
+        return a + b + c;
+    return a + b;
+};
+//1:31:12
